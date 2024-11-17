@@ -33,7 +33,7 @@ resizeCanvas();
 
 
 const road = new Road(3, CANVAS_WIDTH, CANVAS_HEIGHT);
-const N = 1;
+const N = 30;
 const cars = generateCars(N);
 
 let bestCar = cars[0];

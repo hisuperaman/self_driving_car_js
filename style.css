@@ -32,3 +32,11 @@ body{
     height: 50px;
     font-size: 1.5rem;
 }
+
+@media screen and (max-width: 500px) {
+    .controls {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
