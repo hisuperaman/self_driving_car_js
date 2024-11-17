@@ -1,0 +1,34 @@
+body{
+    box-sizing: border-box;
+    background-color: gray;
+    margin: 0;
+
+    overflow: hidden;
+    touch-action: none;
+
+    display: flex;
+}
+
+.canvasContainer{
+    width: 100%;
+    height: 100vh;
+}
+
+#myCanvas{
+    background-color: white;
+    width: 400px;
+    height: 100vh;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.controls{
+    height: 100%;
+    display: flex;
+}
+
+.controls button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+}
