@@ -2,9 +2,10 @@ class Road {
     constructor(laneCount=4, canvasWidth, canvasHeight) {
         this.margin = 10;
         
-        const infinity = 10000000;
-        this.top = infinity;
-        this.bottom = -infinity;
+        this.canvasHeight = canvasHeight;
+        this.buffer = 1000;
+        this.top = -this.buffer;
+        this.bottom = canvasHeight;
         this.left = 0+this.margin;
         this.right = canvasWidth - this.margin;
 
@@ -21,8 +22,23 @@ class Road {
         ]
     }
 
-    update() {
+    update(carY) {
+        if(carY <= this.top+(this.canvasHeight*0.9)) {
+            this.top -= this.buffer;
+        }
+        if(carY >= this.bottom-(this.canvasHeight*0.9)) {
+            this.bottom += this.buffer;
+        }
 
+        const topLeft = {x: this.left, y: this.top};
+        const topRight = {x: this.right, y: this.top};
+        const bottomLeft = {x: this.left, y: this.bottom};
+        const bottomRight = {x: this.right, y: this.bottom};
+
+        this.borders = [
+            [topLeft, bottomLeft],
+            [topRight, bottomRight]
+        ]
     }
 
     draw(ctx) {

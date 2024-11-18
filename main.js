@@ -92,6 +92,7 @@ function animate(timestamp) {
                 c => c.y
             ))
         )
+        road.update(bestCar.y)
         
         ctx.save();
         ctx.translate(0, -bestCar.y+CANVAS_HEIGHT*0.6)
